@@ -13,8 +13,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: dotnet test
-        run: dotnet test --configuration Release 
+        - uses: actions/checkout@v4
 
-      - name: dotnet publish
-        run: dotnet publish src/githubactionsdotnet.api/githubactionsdotnet.api.csproj --configuration Release -o artifacts
+        - name: dotnet test
+          uses: actions/setup-dotnet@v4
+          with:
+            dotnet-version: 8.0
+
+        - name: dotnet test
+          run: dotnet test --configuration Release
+
+        - name: dotnet publish
+          run: dotnet publish src/githubactionsdotnet.api/githubactionsdotnet.api.csproj --configuration Release -o artifacts
+         
