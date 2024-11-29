@@ -25,3 +25,4 @@ jobs:
 
         - name: dotnet publish
           run: dotnet publish src/githubactionsdotnet.api/githubactionsdotnet.api.csproj --configuration Release -o artifacts
+         
