@@ -25,7 +25,7 @@ jobs:
           run: dotnet test --configuration Release
 
         - name: dotnet publish
-          run: dotnet publish src/GitHubActionsDotNet.Api/GitHubActionsDotNet.api.csproj --configuration Release -o artifacts
+          run: dotnet publish src/GitHubActionsDotNet.Api/GitHubActionsDotNet.Api.csproj --configuration Release -o artifacts
          
         - uses: actions/upload-artifact@v4
           with:
